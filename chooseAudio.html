@@ -8,20 +8,23 @@
     <title>Web Audio Api</title>
 </head>
 <body>
-    <div id="content">
+    <div class="top-container chooseAudio" >
         <!-- <form method="POST" enctype=multipart/form-data> -->
-            <label for="file">Choose file to upload</label>
-            <input type="file" id="file" accept="audio/*" />
-        <!-- </form> -->
-            <a href="./index.html"> 
-                <button class="link">Use Microphone</button>
-            </a>
+            <section class="link">
+                <input type="file" id="file" accept="audio/*" />
+            </section>
+            
+            <section class="link">
+                <a href="./index.html"> 
+                    <button class="link">Use Microphone</button>
+                </a>
+            </section>
+
+    </div>
+    <div id="content">
         <canvas id="canvas"></canvas>
         <audio id="audio" controls></audio>
     </div>
 </body>
-
-<script>
-</script>
 
 </html>
