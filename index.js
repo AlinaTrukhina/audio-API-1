@@ -74,8 +74,6 @@ function visualize(stream) {
     if(!audioCtx) {
         audioCtx = new AudioContext();
     }
-    
-    if (recording === true) {
 
         console.log('in visualize stream,', recording );
 
@@ -99,8 +97,13 @@ function visualize(stream) {
     let x = 0;
 
     function renderFrame() {
+        if (recording === true) {
         requestAnimationFrame(renderFrame);
-    
+        } else {
+            console.log('in visualize stream,', recording );
+            return;
+        }
+
         x = 0;
     
         analyser.getByteFrequencyData(dataArray);
@@ -120,17 +123,11 @@ function visualize(stream) {
     
             x += barWidth + 1;
         }
-        }
+    }
 
-        renderFrame();
+    renderFrame();
     
     }
-
-    else {
-        console.log('in visualize stream,', recording );
-        return;
-    }
-}
 
 };
 
